@@ -16,7 +16,7 @@ En la actualidad, la adopción de Inteligencia Artificial en el ciclo de vida de
 
 ---
 
-## 3. Índice Propuesto para el Documento de Investigación
+## 3. Índice
 
 ### Capítulo I: Introducción y Fundamentos
 * **1.1.** Introducción al Desarrollo Asistido por IA (El espectro Chat vs. Agente).
