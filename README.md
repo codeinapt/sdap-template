@@ -1,1 +1,119 @@
 # sdap-template
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1600" width="100%" height="100%" style="background-color: #0d1117; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  
+  <!-- Encabezado / Header -->
+  <rect x="50" y="50" width="1100" height="180" rx="16" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+  <text x="90" y="110" fill="#38bdf8" font-size="20" font-weight="bold" letter-spacing="2">ESTÁNDAR METODOLÓGICO SDAP</text>
+  <text x="90" y="155" fill="#ffffff" font-size="38" font-weight="800">Spec-Driven Agentic Programming</text>
+  <text x="90" y="195" fill="#94a3b8" font-size="22">Del "Prompteo" Intuitivo a la Ingeniería de Software Predecible</text>
+
+  <!-- Sección El Problema -->
+  <rect x="50" y="260" width="1100" height="200" rx="16" fill="#161b22" stroke="#f87171" stroke-width="2" stroke-dasharray="8 4"/>
+  <text x="90" y="305" fill="#f87171" font-size="22" font-weight="bold">❌ EL PROBLEMA: AGENTES DE IA SIN CONTROL</text>
+  
+  <g transform="translate(90, 335)">
+    <!-- Item 1 -->
+    <circle cx="12" cy="15" r="6" fill="#f87171"/>
+    <text x="30" y="22" fill="#e2e8f0" font-size="18" font-weight="bold">Lost in the Middle:</text>
+    <text x="195" y="22" fill="#94a3b8" font-size="18">Los LLMs pierden precisión y modifican archivos equivocados en repositorios grandes.</text>
+
+    <!-- Item 2 -->
+    <circle cx="12" cy="55" r="6" fill="#f87171"/>
+    <text x="30" y="62" fill="#e2e8f0" font-size="18" font-weight="bold">Costo Cuadrático O(N²):</text>
+    <text x="250" y="62" fill="#94a3b8" font-size="18">Saturar la ventana de contexto dispara el consumo de tokens y la latencia.</text>
+
+    <!-- Item 3 -->
+    <circle cx="12" cy="95" r="6" fill="#f87171"/>
+    <text x="30" y="102" fill="#e2e8f0" font-size="18" font-weight="bold">Deriva Arquitectónica:</text>
+    <text x="240" y="102" fill="#94a3b8" font-size="18">Agentes sin restricciones rompen patrones de diseño y reglas de negocio puras.</text>
+  </g>
+
+  <!-- Sección La Solución SDAP -->
+  <text x="50" y="510" fill="#ffffff" font-size="28" font-weight="bold">🛡️ LA SOLUCIÓN: ARQUITECTURA DE DOBLE CAPA</text>
+
+  <!-- Capa 0 -->
+  <rect x="50" y="540" width="1100" height="250" rx="16" fill="#161b22" stroke="#38bdf8" stroke-width="2"/>
+  <rect x="50" y="540" width="12" height="250" fill="#38bdf8" rx="6"/>
+  <text x="90" y="585" fill="#38bdf8" font-size="24" font-weight="bold">CAPA 0: GOBERNANZA RAÍZ (.sdap/)</text>
+  <text x="490" y="585" fill="#cbd5e1" font-size="18">(El Genoma Inmutable del Proyecto)</text>
+
+  <g transform="translate(90, 615)" font-size="17">
+    <rect x="0" y="0" width="310" height="140" rx="8" fill="#0d1117" stroke="#30363d"/>
+    <text x="20" y="35" fill="#38bdf8" font-weight="bold">ARCH_SKELETON.md</text>
+    <text x="20" y="65" fill="#94a3b8">Fronteras arquitectónicas,</text>
+    <text x="20" y="90" fill="#94a3b8">Tech Fence y C4 Blocks.</text>
+
+    <rect x="335" y="0" width="310" height="140" rx="8" fill="#0d1117" stroke="#30363d"/>
+    <text x="355" y="35" fill="#38bdf8" font-weight="bold">DOMAIN_LOGIC.md</text>
+    <text x="355" y="65" fill="#94a3b8">Reglas de negocio puras y</text>
+    <text x="355" y="90" fill="#94a3b8">Máquinas de Estados Mermaid.</text>
+
+    <rect x="670" y="0" width="310" height="140" rx="8" fill="#0d1117" stroke="#30363d"/>
+    <text x="690" y="35" fill="#38bdf8" font-weight="bold">DATA_MINDMAP.md</text>
+    <text x="690" y="65" fill="#94a3b8">Contratos de datos, DTOs y</text>
+    <text x="690" y="90" fill="#94a3b8">Diagramas Entidad-Relación.</text>
+  </g>
+
+  <!-- Capa 1 -->
+  <rect x="50" y="820" width="1100" height="230" rx="16" fill="#161b22" stroke="#34d399" stroke-width="2"/>
+  <rect x="50" y="820" width="12" height="230" fill="#34d399" rx="6"/>
+  <text x="90" y="865" fill="#34d399" font-size="24" font-weight="bold">CAPA 1: CONTEXTO VIVO DE CÓDIGO (docs/ai/)</text>
+  <text x="590" y="865" fill="#cbd5e1" font-size="18">(El Mapa de Navegación del Sistema)</text>
+
+  <g transform="translate(90, 895)">
+    <rect x="0" y="0" width="480" height="120" rx="8" fill="#0d1117" stroke="#30363d"/>
+    <text x="20" y="35" fill="#34d399" font-size="18" font-weight="bold">15 Archivos Temáticos Agnósticos</text>
+    <text x="20" y="65" fill="#94a3b8" font-size="16">Mapean la estructura existente (UI, BD, Servicios,</text>
+    <text x="20" y="90" fill="#94a3b8" font-size="16">Manejo de Errores, Convenciones, etc.).</text>
+
+    <rect x="505" y="0" width="475" height="120" rx="8" fill="#0d1117" stroke="#30363d"/>
+    <text x="525" y="35" fill="#34d399" font-size="18" font-weight="bold">Guardrails Explícitos (14-ai-rules.md)</text>
+    <text x="525" y="65" fill="#94a3b8" font-size="16">Límites conductuales, prohibición de suposiciones</text>
+    <text x="525" y="90" fill="#94a3b8" font-size="16">y protección contra cambios no autorizados.</text>
+  </g>
+
+  <!-- Alcance Atómico Local -->
+  <rect x="50" y="1080" width="1100" height="120" rx="16" fill="#161b22" stroke="#a78bfa" stroke-width="2"/>
+  <text x="90" y="1125" fill="#a78bfa" font-size="22" font-weight="bold">🎯 EJECUCIÓN ATÓMICA LOCAL: INTERFACE_FLOW.md</text>
+  <text x="90" y="1160" fill="#94a3b8" font-size="18">Delimitación del alcance atada estrictamente a Diagramas de Secuencia Mermaid por módulo.</text>
+
+  <!-- Workflow SDAP -->
+  <text x="50" y="1245" fill="#ffffff" font-size="28" font-weight="bold">🔄 EL FLUJO DE TRABAJO SDAP</text>
+  
+  <g transform="translate(50, 1275)">
+    <!-- Paso 1 -->
+    <rect x="0" y="0" width="340" height="140" rx="12" fill="#161b22" stroke="#30363d"/>
+    <text x="20" y="40" fill="#38bdf8" font-size="20" font-weight="bold">1. Co-Diseño</text>
+    <text x="20" y="75" fill="#e2e8f0" font-size="16">Humano + IA conversacional</text>
+    <text x="20" y="100" fill="#94a3b8" font-size="15">Actualizan .sdap/ &amp; Flow local</text>
+
+    <!-- Flecha 1 -->
+    <path d="M 355 70 L 380 70" stroke="#a78bfa" stroke-width="4" marker-end="url(#arrow)"/>
+
+    <!-- Paso 2 -->
+    <rect x="395" y="0" width="340" height="140" rx="12" fill="#161b22" stroke="#30363d"/>
+    <text x="415" y="40" fill="#38bdf8" font-size="20" font-weight="bold">2. Restricción</text>
+    <text x="415" y="75" fill="#e2e8f0" font-size="16">Payload de Inyección Atómica</text>
+    <text x="415" y="100" fill="#94a3b8" font-size="15">Capa 0 + Guardrails + Flow Local</text>
+
+    <!-- Flecha 2 -->
+    <path d="M 750 70 L 775 70" stroke="#a78bfa" stroke-width="4"/>
+
+    <!-- Paso 3 -->
+    <rect x="790" y="0" width="310" height="140" rx="12" fill="#161b22" stroke="#34d399" stroke-width="2"/>
+    <text x="810" y="40" fill="#34d399" font-size="20" font-weight="bold">3. Ejecución</text>
+    <text x="810" y="75" fill="#e2e8f0" font-size="16">Agente Autónomo</text>
+    <text x="810" y="100" fill="#94a3b8" font-size="15">Genera código limpio y tests</text>
+  </g>
+
+  <!-- Footer Banner -->
+  <rect x="50" y="1450" width="1100" height="90" rx="16" fill="url(#grad)" />
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0284c7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0d9488;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <text x="600" y="1505" fill="#ffffff" font-size="24" font-weight="bold" text-anchor="middle">"El humano diseña y restringe; la IA ejecuta e implementa."</text>
+
+</svg>
