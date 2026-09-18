@@ -1,21 +1,21 @@
 # CAPÍTULO II: EL MARCO METODOLÓGICO SDAP (LA TEORÍA)
 
-## 2.1. Fase de Co-Diseño Conversacional (*Human-AI Inception*)
+## 2.1. Fase de Co-Diseño Dialéctico (*Human-AI Inception*)
 
-La Fase de Co-Diseño Conversacional, denominada dentro de este marco como *Human-AI Inception*, constituye la etapa de divergencia y refinamiento conceptual de la metodología SDAP. En la ingeniería de software tradicional, el proceso de descubrimiento y definición de requisitos sufre de asimetrías de información y sesgos cognitivos humanos. *Human-AI Inception* transforms esta etapa en un proceso dialéctico estructurado entre el ingeniero y un LLM conversacional, operando como un compilador de ideas antes de la generación de cualquier línea de código fuente.
+La Fase de Co-Diseño Dialéctico, denominada dentro de este marco como *Human-AI Inception*, constituye la etapa de divergencia, exploración y refinamiento conceptual de la metodología SDAP. En la ingeniería de software tradicional, el proceso de descubrimiento y definición de requisitos padece de asimetrías de información, imprecisiones del lenguaje natural y sesgos cognitivos humanos. *Human-AI Inception* transforma esta etapa en un proceso dialéctico estructurado entre el ingeniero y un LLM operando como un **compañero de razonamiento**, actuando como un compilador de ideas antes de la escritura de cualquier línea de código fuente.
 
-El objetivo fundamental de esta fase es expandir el espacio de soluciones posibles mediante el debate técnico, para posteriormente converger en definiciones precisas. Este procedimiento se estandariza a través de un protocolo de cuatro etapas secuenciales e iterativas:
+El objetivo fundamental de esta fase no es obtener una respuesta rápida, sino elevar progresivamente la calidad del contexto compartido para que el problema, el objetivo y la solución evolucionen conjuntamente hasta alcanzar una comprensión profunda. Este procedimiento se estandariza a través de un protocolo de cuatro etapas secuenciales e iterativas:
 
-1. **Establecimiento del Alcance Teórico (*The Scope Prompt*):** El desarrollador introduce el problema de negocio y las restricciones del entorno sin solicitar implementaciones de código. El modelo es forzado a proponer múltiples alternativas arquitectónicas evaluando pros y contras.
-2. **Bucle de Desafío Mutuo (*Challenge Loop*):** El ingeniero somete las propuestas de la IA a pruebas de estrés conceptuales, cuestionando la escalabilidad, posibles cuellos de botella y la selección de dependencias dentro del ecosistema tecnológico contemporáneo.
-3. **Congelamiento de Contexto (*The Freezing Prompt*):** Una vez seleccionada la ruta óptima, se restringe la libertad creativa del modelo. Se le ordena sintetizar el histórico de la conversación y estructurar los requisitos funcionales purificados.
-4. **Exportación de Artefactos a la Capa 0:** La IA traduce el entendimiento abstracto de la sesión en especificaciones técnicas concretas en formato Markdown y diagramas Mermaid. En este punto, la sesión conversacional concluye y el contexto se transfiere a los archivos inmutables del repositorio en el directorio `.sdap/`.
+1. **Establecimiento del Alcance Teórico (*The Scope Prompt*):** El desarrollador introduce el problema de negocio y la hipótesis inicial sin solicitar implementaciones de código. El modelo es forzado a proponer múltiples alternativas arquitectónicas evaluando pros, contras y posibles cuellos de botella.
+2. **Bucle de Cuestionamiento Crítico (*Challenge Loop & Bucle "¿Y si pensamos un poco más?"*):** El ingeniero y la IA someten las propuestas a pruebas de estrés conceptuales. El humano cuestiona las asunciones del modelo y el modelo reta los sesgos del humano. En esta etapa emerge el **Objetivo Emergente (*Emergent Goal*)**, redefiniendo la naturaleza del problema original a medida que la calidad del contexto se incrementa.
+3. **Congelamiento de Contexto (*The Freezing Prompt*):** Una vez alcanzada la comprensión profunda y seleccionada la ruta óptima, se congela la exploración creativa. Se le ordena a la IA sintetizar el histórico de la conversación, depurar las contradicciones y estructurar los requisitos funcionales purificados.
+4. **Cristalización de Artefactos en la Capa 0:** La IA traduce el entendimiento abstracto de la sesión en especificaciones técnicas concretas en formato Markdown y diagramas Mermaid. En este punto, la sesión conversacional concluye y el conocimiento se transfiere de la memoria volátil a los archivos inmutables del repositorio en el directorio `.sdap/`.
 
 ---
 
 ## 2.2. La Arquitectura Fractal de Documentación y la Doble Capa
 
-El pilar estructural de SDAP es la sustitución del enfoque tradicional de "Documento Maestro de Requisitos" por una **Arquitectura Fractal de Documentación**. Los documentos de texto extensos y centralizados inducen fallos de atención en las IAs debido al fenómeno *Lost in the Middle*. SDAP propone una fragmentación granular del conocimiento técnico en archivos Markdown de tamaño acotado y distribuidos en dos capas principales de abstracción:
+El pilar estructural de SDAP es la sustitución del "Documento Maestro de Requisitos" tradicional por una **Arquitectura Fractal de Documentación**. Los documentos de texto extensos y monolíticos inducen fallos de atención en las IAs debido al fenómeno *Lost in the Middle*. SDAP propone una fragmentación granular del conocimiento técnico en archivos Markdown de tamaño acotado, distribuidos en dos capas principales de abstracción:
 
 ```mermaid
 graph TD
@@ -48,6 +48,7 @@ Constituye el "Genoma Inmutable del Proyecto". Se compone strictly de tres archi
 * **`DOMAIN_LOGIC.md` (Los Órganos):** Ubicado en `.sdap/`. Almacena las reglas de negocio puras, restricciones funcionales y modelos de comportamiento lógico de los actores del sistema. Gobierna qué puede y qué no puede hacer el software.
 * **`DATA_MINDMAP.md` (El Sistema Circulatorio):** Ubicado en `.sdap/`. Define los contratos de datos, los esquemas de bases de datos, las firmas de entidades y las interfaces de comunicación. Garantiza la consistencia en el tipado y transporte de información.
 * **`INTERFACE_FLOW.md` (Los Músculos):** Ubicado de manera local a nivel de módulo o subdirectorio (`src/modules/nombre-modulo/`). Detalla la interacción secuencial y el orden de ejecución de procesos críticos para ese componente específico.
+  
 
 ### 2.2.2. Capa 1: Contexto Vivo de Código (`docs/ai/`)
 Si la Capa 0 define el *qué* y el *por qué*, la Capa 1 mapea el *cómo*. Consiste en un conjunto estructurado de 15 archivos agnósticos a la tecnología que sirven como mapa del código existente para el agente autónomo (convenciones de nombrado, inyección de dependencias, patrones de interfaz, reglas de comportamiento y guías para añadir funcionalidades).
@@ -71,9 +72,9 @@ Al procesar la sintaxis de Mermaid, los LLMs indexan las relaciones de interdepe
 
 ## 2.4. Principio de Ejecución Atómica Atada a Diagramas
 
-El cierre operativo de la teoría SDAP es el **Principio de Ejecución Atómica Atada a Diagramas**. El error fundamental del uso de agentes de desarrollo actuales radica en proveer instrucciones ambiguas de amplio espectro (ej. *"Modifica el sistema de autenticación para que soporte JWT y maneje logs"*), lo que fragmenta la atención del agente y produce respuestas truncadas o parches redundantes.
+El cierre operativo de la teoría SDAP es el **Principio de Ejecución Atómica Atada a Diagramas**. El error fundamental del uso de agentes de desarrollo actuales radica en proveer instrucciones ambiguas de amplio espectro (ej. *"Modifica el sistema de autenticación para que soporte JWT y maneje logs"*), lo que fragmenta la atención del agente y produce respuestas truncadas, alucinaciones o parches redundantes.
 
-Este principio dicta que **toda tarea delegada a una IA debe poseer un alcance strictly delimitado por una unidad gráfica indexada en la documentación**. El prompt estandarizado de SDAP forzaría la ejecución de la siguiente manera:
+Este principio dicta que **toda tarea delegada a una IA debe poseer un alcance strictly delimitado por una unidad gráfica indexada en la documentación**. El prompt estandarizado de SDAP fuerza la ejecución limitando el espacio de estados del modelo:
 
 $$ \text{Alcance de Ejecución} = f(\text{Diagrama de Secuencia } X) \cap f(\text{Entidad ERD } Y) \cap f(\text{Regla Guardrail } Z) $$
 
