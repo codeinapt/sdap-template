@@ -101,6 +101,6 @@ El verdadero valor del contexto vivo radica en prevenir la "obsolescencia de la 
 
 Para optimizar el uso de la ventana de contexto y prevenir el fenómeno *Lost in the Middle*, la selección de archivos inyectados al agente debe realizarse bajo el siguiente criterio de filtrado atómico:
 
-$$ \text{Contexto Inyectado} = \{ \text{.sdap/}, \text{ docs/ai/14-ai-rules.md}, \text{ docs/ai/04-coding-guidelines.md}, \text{ INTERFACE_FLOW.md local} \} $$
+$$ \text{Contexto Inyectado} = \{ \text{.sdap/}, \text{ docs/ai/14-ai-rules.md}, \text{ docs/ai/04-coding-guidelines.md}, \text{ INTERFACEFLOW.md local} \} $$
 
 Este enfoque garantiza que el agente reciba únicamente las restricciones inmutables y el mapa del cambio local, maximizando la precisión del código generado y reduciendo al mínimo el consumo de tokens.
