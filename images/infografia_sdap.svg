@@ -113,6 +113,6 @@
       <stop offset="100%" style="stop-color:#0d9488;stop-opacity:1" />
     </linearGradient>
   </defs>
-  <text x="600" y="1505" fill="#ffffff" font-size="24" font-weight="bold" text-anchor="middle">"El humano diseña y restringe; la IA ejecuta e implementa."</text>
+  <text x="600" y="1505" fill="#ffffff" font-size="24" font-weight="bold" text-anchor="middle">"El humano y la IA co-evolucionan el contexto y el problema hasta alcanzar una comprensión profunda. Una vez congelada la especificación resultante, el humano restringe y la IA ejecuta de forma determinista."</text>
 
 </svg>
