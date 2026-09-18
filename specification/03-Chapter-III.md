@@ -22,7 +22,7 @@ graph TD
         end
 
         subgraph Modules [Módulos de Código - src/modules/X/]
-            FLOW[INTERFACE_FLOW.md]
+            FLOW[INTERFACEFLOW.md]
             SRC[Código Fuente]
         end
     end
