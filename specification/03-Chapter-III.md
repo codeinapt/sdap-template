@@ -34,35 +34,23 @@ graph TD
 
 ## 3.2. Capa 0: Gobernanza Raíz y Genoma del Proyecto (`.sdap/`)
 
-La **Capa 0** se aloja en el directorio `.sdap/` en la raíz del repositorio. Constituye la "Constitución Inmutable" de la aplicación. Ningún agente puede violar las reglas o patrones definidos en esta capa.
+La **Capa 0** se aloja en el directorio `.sdap/` en la raíz del repositorio. Constituye el "Genoma Inmutable" de la aplicación, cristalizado durante la Fase de Incepción Dialéctica. Ningún agente autónomo está autorizado a violar las reglas o patrones definidos en esta capa.
 
 ### 3.2.1. `ARCH_SKELETON.md` (El Esqueleto Arquitectónico)
 Define la estructura global del sistema, los límites de las capas y la valla tecnológica (*Tech Fence*).
-
 * **Objetivo:** Prevenir que el agente introduzca librerías no autorizadas o modifique el patrón arquitectónico base.
-* **Componentes Clave:**
-  * Descripción general del patrón (ej. Clean Architecture, Hexagonal, CQRS).
-  * Lista explícita de tecnologías y versiones permitidas.
-  * Diagrama Mermaid de Contenedores/Bloques (C4).
+* **Componentes Clave:** Descripción general del patrón (ej. Clean Architecture, Hexagonal, CQRS), lista explícita de tecnologías permitidas y Diagrama Mermaid de Contenedores/Bloques (C4).
 
 ### 3.2.2. `DOMAIN_LOGIC.md` (Las Reglas de Negocio)
 Centraliza la lógica de dominio pura, desacoplada de cualquier implementación tecnológica o base de datos.
-
-* **Objetivo:** Evitar que la IA implemente reglas de negocio arbitrarias o inconsistentes con los requisitos del producto.
-* **Componentes Clave:**
-  * Glosario de términos del dominio (*Ubiquitous Language*).
-  * Reglas de validación inmutables por entidad.
-  * Diagrama Mermaid de Máquina de Estados (*State Machine*) para los flujos de vida principales.
+* **Objetivo:** Evitar que la IA implemente reglas de negocio arbitrarias o inconsistentes con el producto.
+* **Componentes Clave:** Glosario de términos del dominio (*Ubiquitous Language*), reglas de validación inmutables por entidad y Diagrama Mermaid de Máquina de Estados (*State Machine*).
 
 ### 3.2.3. `DATA_MINDMAP.md` (Los Contratos y Modelos de Datos)
 Mapea las estructuras de información, esquemas de datos e interfaces de transporte.
-
 * **Objetivo:** Garantizar la consistencia del tipado y la integridad referencial en todo el sistema.
-* **Componentes Clave:**
-  * Definición de Entidades y Value Objects.
-  * Diagrama Mermaid de Entidad-Relación (ERD).
-  * Contratos de transferencia (DTOs, eventos de dominio).
-
+* **Componentes Clave:** Definición de Entidades, Value Objects, Diagrama Mermaid de Entidad-Relación (ERD) y Contratos DTOs/Eventos.
+  
 ---
 
 ## 3.3. Capa 1: Contexto Vivo de Código (`docs/ai/`)
@@ -101,7 +89,15 @@ A diferencia de la Capa 0 y la Capa 1 (que son globales), el archivo `INTERFACE_
 
 ---
 
-## 3.5. Protocolo de Inyección de Contexto para Agentes
+## 3.5. Ciclo de Vida del Contexto y Sincronización Inversa (*Reverse Sync*)
+
+El verdadero valor del contexto vivo radica en prevenir la "obsolescencia de la documentación". En SDAP, si una ejecución atómica altera la estructura de carpetas, añade una dependencia o modifica un patrón de respuesta, se activa el protocolo de **Sincronización Inversa (*Reverse Sync*)**:
+
+1. **Escribir Código:** El agente ejecuta la tarea atómica delimitada.
+2. **Evaluación de Impacto en Contexto:** El agente o desarrollador identifica si el cambio afectó alguno de los 15 archivos de `docs/ai/`.
+3. **Actualización del Mapa Vivo:** Antes de dar por concluido el Pull Request, el agente actualiza los archivos correspondientes en `docs/ai/` (por ejemplo, añadiendo la nueva dependencia a `12-dependencies.md`).
+   
+## 3.6. Protocolo de Inyección de Contexto para Agentes
 
 Para optimizar el uso de la ventana de contexto y prevenir el fenómeno *Lost in the Middle*, la selección de archivos inyectados al agente debe realizarse bajo el siguiente criterio de filtrado atómico:
 
