@@ -12,7 +12,7 @@
 **Spec-Driven Agentic Programming (SDAP)** es un marco de trabajo diseñado para controlar y dirigir a los Agentes autónomos de IA durante el desarrollo de software.
 
 En lugar de darle instrucciones ambiguas a la IA y dejar que modifique archivos libremente, SDAP establece una premisa fundamental:
-> **"El humano diseña y restringe; la IA ejecuta e implementa."**
+> **"El humano y la IA co-evolucionan el contexto y el problema hasta alcanzar una comprensión profunda. Una vez congelada la especificación resultante, el humano restringe y la IA ejecuta de forma determinista."**
 
 #### 🛡️ Pilares Principales:
 * **Capa 0 (`.sdap/`):** El "genoma inmutable" del proyecto. Define las reglas de negocio, la arquitectura y los modelos de datos que la IA **nunca** puede violar.
