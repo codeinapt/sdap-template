@@ -37,7 +37,7 @@ En la actualidad, la adopción de Inteligencia Artificial en el ciclo de vida de
 * **3.1.** Visión General de la Arquitectura de Información del Repositorio.
 * **3.2.** Capa 0: Gobernanza Raíz y Genoma del Proyecto (`.sdap/`).
 * **3.3.** Capa 1: Contexto Vivo de Código (`docs/ai/` - Índice estandarizado de 15 archivos).
-* **3.4.** Documentación Local de Módulo (`INTERFACE_FLOW.md`).
+* **3.4.** Documentación Local de Módulo (`INTERFACEFLOW.md`).
 * **3.5.** Ciclo de Vida del Contexto y Sincronización Inversa (*Reverse Sync*).
 
 ### Capítulo IV: Protocolos de Inyección, Guía Operativa y Evaluación
