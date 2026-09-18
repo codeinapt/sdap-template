@@ -33,7 +33,7 @@ graph TD
     end
 
     subgraph Modulos [Módulos Locales src/modules/X/]
-        IF[INTERFACE_FLOW.md]
+        IF[INTERFACEFLOW.md]
         CODE[Código Fuente .ts / .cs / .py]
     end
 
@@ -47,7 +47,7 @@ Constituye el "Genoma Inmutable del Proyecto". Se compone strictly de tres archi
 * **`ARCH_SKELETON.md` (El Esqueleto):** Ubicado en `.sdap/`. Contiene el mapa de cohesión inmutable del software: descripción del sistema, fronteras tecnológicas explícitas (*Tech Fence*) y el patrón arquitectónico global. Define los límites físicos de la aplicación.
 * **`DOMAIN_LOGIC.md` (Los Órganos):** Ubicado en `.sdap/`. Almacena las reglas de negocio puras, restricciones funcionales y modelos de comportamiento lógico de los actores del sistema. Gobierna qué puede y qué no puede hacer el software.
 * **`DATA_MINDMAP.md` (El Sistema Circulatorio):** Ubicado en `.sdap/`. Define los contratos de datos, los esquemas de bases de datos, las firmas de entidades y las interfaces de comunicación. Garantiza la consistencia en el tipado y transporte de información.
-* **`INTERFACE_FLOW.md` (Los Músculos):** Ubicado de manera local a nivel de módulo o subdirectorio (`src/modules/nombre-modulo/`). Detalla la interacción secuencial y el orden de ejecución de procesos críticos para ese componente específico.
+* **`INTERFACEFLOW.md` (Los Músculos):** Ubicado de manera local a nivel de módulo o subdirectorio (`src/modules/nombre-modulo/`). Detalla la interacción secuencial y el orden de ejecución de procesos críticos para ese componente específico.
   
 
 ### 2.2.2. Capa 1: Contexto Vivo de Código (`docs/ai/`)
