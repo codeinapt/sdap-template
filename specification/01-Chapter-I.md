@@ -26,7 +26,6 @@ graph TD
     end
 ```
 
-
 ### 1.1.1. Asistencia Conversacional Pura (Enfoque Chat)
 Este extremo se caracteriza por un flujo de interacción de grano fino y de naturaleza síncrona. El desarrollador utiliza interfaces conversacionales para resolver preguntas puntuales ("¿Cómo refactorizo esta función?" o "Explícame esta traza de error").
 
@@ -35,29 +34,8 @@ Aunque mantiene al humano en el bucle de control (Human-in-the-Loop o HITL), pad
 ### 1.1.2. Ejecución Autónoma Basada en Objetivos (Enfoque Agente)
 En el extremo opuesto operan los agentes autónomos con capacidad de uso de herramientas (tool-use). A partir de una instrucción abstracta de alto nivel (ej. "Implementar el módulo de recuperación de contraseñas"), el agente lee el árbol de archivos, ejecuta comandos y modifica el repositorio libremente.
 
-A pesar de su velocidad percibida, este enfoque carece de restricciones metodológicas. Al no poseer un mapa del dominio ni barreras de arquitectura, el agente frecuentemente altera componentes no relacionados, reescribe interfaces existentes, introduce librerías no autorizadas y genera deuda técnica severa.
+A pesar de su velocidad percibida, este enfoque carece de restricciones metodológicas. Al no poseer un mapa del dominio, contratos de casos de uso ni barreras de interfaz o arquitectura, el agente frecuentemente altera componentes no relacionados, reescribe interfaces existentes, inventa rutas o formularios no solicitados e introduce librerías no autorizadas.
 
-```mermaid
-graph TD
-    subgraph Chat ["1. Enfoque Chat (Alta Fricción)"]
-        H1[Desarrollador Humano] -- "Copia Contexto Manual" --> LLM1[LLM / Chat]
-        LLM1 -- "Genera Snippet" --> H1
-        H1 -- "Pega Código" --> IDE1[Repositorio / IDE]
-    end
-
-    subgraph Agent ["2. Enfoque Agente Ad-Hoc (Riesgo de Deriva)"]
-        H2[Desarrollador Humano] -- "Prompt de Alto Nivel" --> AG2[Agente Autónomo]
-        AG2 -- "Lectura/Escritura Libre" --> IDE2[Repositorio / IDE]
-        IDE2 -. "Sin Barreras de Arquitectura" .-> Chaos[Modificaciones Indeadas]
-    end
-
-    subgraph SDAP ["3. Enfoque SDAP (Gobernanza Restringida)"]
-        H3[Desarrollador Humano] -- "Co-Diseño & Filtro" --> SPEC[".sdap/ & docs/ai/"]
-        SPEC -- "Restricciones & Contexto Atómico" --> AG3[Agente Autónomo]
-        AG3 -- "Ejecución Acotada" --> IDE3[Repositorio / IDE]
-    end
-
-```
 ---
 
 ## 1.2. El Problema del Contexto en los Transformadores
@@ -72,7 +50,7 @@ Esto se traduce en un incremento lineal en los costos financieros por consumo de
 ### 1.2.2. El Fenómeno *Lost in the Middle* (Perdido en el Medio)
 Estudios empíricos de la ciencia de la computación han demostrado que la capacidad de recuperación de información de un LLM no es uniforme a lo largo de su ventana de contexto. Los mecanismos de atención demuestran un sesgo de posición en forma de U: retienen con alta precisión la información ubicada al inicio (*primacy effect*) y al final (*recency effect*) del prompt, pero sufren una severa degradación en la precisión de recuperación cuando los datos críticos se encuentran en el centro del payload inyectado. 
 
-En software, si las reglas de negocio, esquemas de BD o firmas de interfaces quedan sepultadas dentro de miles de líneas de código fuente inyectadas masivamente, la IA incurre en alucinaciones semánticas e ignora las directivas clave del proyecto.
+En software, si las reglas de negocio, esquemas de BD, especificaciones de pantallas o firmas de interfaces quedan sepultadas dentro de miles de líneas de código fuente inyectadas masivamente, la IA incurre en alucinaciones semánticas e ignora las directivas clave del proyecto.
 
 ---
 
@@ -125,11 +103,10 @@ SDAP sintetiza la relación colaborativa en una premisa de dos fases:
 
 SDAP establece una clara distinción entre el método y el producto resultante:
 * **El Motor Metodológico (SDAP):** Es la arquitectura inmutable de construcción de conocimiento, gobierno de contexto y ejecución atómica. Es agnóstico a la tecnología, los modelos de lenguaje o los lenguajes de programación.
-* **El Artefacto / Producto:** Es el sistema de software concreto (ej. una plataforma SaaS, un motor de aprendizaje, un módulo de pagos) que emerge y evoluciona continuamente sin quedar obsoleto gracias a la metodología.
+* **El Artefacto / Producto:** Es el sistema de software concreto (ej. una plataforma SaaS, una aplicación móvil, un panel backoffice) que emerge y evoluciona continuamente sin quedar obsoleto gracias a la metodología.
 
 ### 1.4.3. Estructura en Doble Capa
 Para garantizar que las especificaciones emergentes se traduzcan en código sin degradación ni deriva, SDAP organiza el conocimiento del repositorio en dos capas:
 
-1. **Capa 0: Gobernanza Raíz y Genoma del Proyecto (`.sdap/`):** Archivos Markdown y diagramas Mermaid inmutables que capturan el resultado del proceso dialéctico (`ARCH_SKELETON.md`, `DOMAIN_LOGIC.md`, `DATA_MINDMAP.md`).
+1. **Capa 0: Gobernanza Raíz y Genoma del Proyecto (`.sdap/`):** Una suite inmutable de especificaciones en Markdown y diagramas Mermaid que capturan el resultado del proceso dialéctico en 6 dimensiones: arquitectura y tech fence (`ARCH_SKELETON.md`), reglas de negocio (`DOMAIN_LOGIC.md`), contratos de datos (`DATA_MINDMAP.md`), casos de uso y actores (`USE_CASES.md`), arquitectura de UI y estados de pantalla (`SCREEN_FLOW.md`), y secuencia de interacción técnica (`INTERFACE_FLOW.md`).
 2. **Capa 1: Contexto Vivo de Código (`docs/ai/`):** 15 archivos estandarizados que representan el mapa operativo del sistema (convenciones, servicios, guardrails y arquitectura de componentes) que los agentes autónomos consultan para ejecutar tareas atómicas.
-
